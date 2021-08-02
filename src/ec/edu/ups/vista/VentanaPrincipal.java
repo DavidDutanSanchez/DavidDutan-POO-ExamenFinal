@@ -34,6 +34,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     }
 
+    public void limpiar() {
+        txtInternos.setText("");
+    }
+
     public void colores(int contador) {
         if (contador == 0) {
             cabeza.setBackground(Color.GRAY);
@@ -154,10 +158,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         botonJugar = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         txtInternos = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cabeza = new javax.swing.JPanel();
         cuerpo = new javax.swing.JPanel();
@@ -170,14 +171,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         txtnombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        intento = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        aciertos = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        total = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         banco1 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         soga1 = new javax.swing.JPanel();
@@ -189,8 +182,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         soga6 = new javax.swing.JPanel();
         banco2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        intento = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        aciertos = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Ahorcado");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNumeroIntentos.addActionListener(new java.awt.event.ActionListener() {
@@ -218,49 +225,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Numero de intentos:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jButton2.setText("Ver");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/ark_view.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 130, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 130, 40));
 
-        botonJugar.setText("JUGAR-OCULTAR");
+        botonJugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/play.png"))); // NOI18N
+        botonJugar.setText("JUGAR");
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonJugarActionPerformed(evt);
             }
         });
-        getContentPane().add(botonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 110, 30));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(jTable2);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 140, 50));
+        getContentPane().add(botonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 140, 40));
 
         txtInternos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInternosActionPerformed(evt);
             }
         });
-        getContentPane().add(txtInternos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 470, 280, 30));
-
-        jLabel5.setText("REGISTROS ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 90, 30));
+        getContentPane().add(txtInternos, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 280, 30));
 
         jLabel3.setText("Ingrese la palabra: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, -1, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, -1, 30));
 
         cabeza.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -317,7 +307,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         brazoIzquierdoLayout.setVerticalGroup(
             brazoIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         getContentPane().add(brazoIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 90, 20));
@@ -332,7 +322,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         brazoDerechoLayout.setVerticalGroup(
             brazoDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         getContentPane().add(brazoDerecho, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 80, 20));
@@ -382,43 +372,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(soga, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, -1, 60));
 
-        jButton1.setText("Intentar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/Intento.jpg"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 90, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, 160, 70));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 100, 30));
 
         jLabel6.setText("Nombre del Jugador:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
-        jLabel4.setText("Numero de intentos:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, 25));
-
-        intento.setBackground(new java.awt.Color(255, 255, 255));
-        intento.setForeground(new java.awt.Color(204, 255, 204));
-        getContentPane().add(intento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 76, 19));
-
-        jLabel2.setText("Numero de aciertos:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, 25));
-        getContentPane().add(aciertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 76, 19));
-
-        jLabel7.setText("Intentos totales:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
-        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 54, 14));
-
-        jLabel8.setText("ESTADISTICAS");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
-
-        jButton3.setText("SALIR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 570, 600, 40));
 
         banco1.setBackground(new java.awt.Color(102, 51, 0));
         banco1.setForeground(new java.awt.Color(102, 102, 0));
@@ -595,6 +559,117 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(banco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, -1, -1));
 
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/exit.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 8, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 150, 120));
+
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
+        jLabel5.setText("REGISTROS ");
+
+        jLabel4.setText("Numero de intentos:");
+
+        intento.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel2.setText("Numero de aciertos:");
+
+        jLabel7.setText("Intentos totales:");
+
+        jLabel8.setText("ESTADISTICAS");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel4)
+                        .addGap(32, 32, 32)
+                        .addComponent(intento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2)
+                        .addGap(33, 33, 33)
+                        .addComponent(aciertos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel7)
+                        .addGap(49, 49, 49)
+                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(intento, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(aciertos, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 260, 240));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -615,11 +690,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 palabras.add(cadena);
                 tamanio++;
                 aciertos.setText(String.valueOf(tamanio));
+                limpiar();
 
                 if (tamanio == 10) {
 
                     controladorJuego.guardar(nombre, (dimencion + contador), sinPalabras.size(), palabras);
-
+                    limpiar();
                 } else {
 
                     ramdomico = palabraEncontrada();
@@ -628,21 +704,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     contador = 0;
                     colores(contador);
                     intento.setText(String.valueOf(contador));
-
+                    limpiar();
                 }
 
             } else {
                 contador++;
                 intento.setText(String.valueOf(contador));
                 total.setText(String.valueOf(dimencion + contador));
+                limpiar();
 
                 if ((contador + dimencion) == nume) {
                     colores(contador);
                     total.setText(String.valueOf(dimencion + contador));
                     controladorJuego.guardar(nombre, nume, palabras.size(), palabras);
+                    limpiar();
 
                 } else if (contador < 4) {
                     colores(contador);
+                    limpiar();
 
                 } else if (contador == 4) {
                     colores(contador);
@@ -652,6 +731,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     ramdomico = palabraEncontrada();
                     colores(contador);
                     intento.setText(String.valueOf(contador));
+                    limpiar();
 
                 }
             }
@@ -747,10 +827,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;

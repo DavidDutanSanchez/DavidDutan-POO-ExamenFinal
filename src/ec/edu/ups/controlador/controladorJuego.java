@@ -45,11 +45,11 @@ public class controladorJuego {
         boolean nui=false;
         if (Objeto.increment(p1,p2)) {
             nui=true;
-           JOptionPane.showMessageDialog(null, "bien");
+           JOptionPane.showMessageDialog(null, " Muy bien");
         }else{
             nui=false;
             
-            JOptionPane.showMessageDialog(null, "mal");
+            JOptionPane.showMessageDialog(null, "intenta otra vez");
            
        }
        return nui;
